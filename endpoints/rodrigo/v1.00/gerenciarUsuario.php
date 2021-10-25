@@ -14,7 +14,7 @@
       $arrayUsuarios = array();
       $countUsuarios = 0;
 
-      if ($_GET['id']) 
+      if (isset($_GET['id']))
         $where = "WHERE id = ".$_GET['id'];
       else
         $where = '';
