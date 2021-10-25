@@ -1,0 +1,16 @@
+<IfModule mod_rewrite.c>
+
+# Turn rewrite engine on
+Options +FollowSymlinks
+RewriteEngine on
+
+# AddCharset UTF-8 .php .json
+AddDefaultCharset utf-8
+
+# Para redirecionamento dos endoints
+RewriteRule ^([a-zA-Z0-9]+)/v([0-9.]+)/([a-zA-Z0-9]+)$   endpoints/$1/v$2/$3.php [nc,qsa]
+
+# Para acesso aos módulos da API
+RewriteRule ^modules/([a-zA-Z0-9]+)/v([0-9.]+)/([a-zA-Z0-9]+)$   modules/$1/v$2/$1.php?c=$3 [nc,qsa]
+
+</IfModule>
